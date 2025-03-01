@@ -1,0 +1,19 @@
+{
+  "name": "website-agc2025",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@turf/turf": "^7.2.0",
+    "chart.js": "^4.4.6",
+    "express": "^4.21.1",
+    "leaflet": "^1.9.4",
+    "react-chartjs-2": "^5.2.0"
+  }
+}

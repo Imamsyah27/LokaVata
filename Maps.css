@@ -1,0 +1,313 @@
+:root {
+    --primary-color: #28a745;
+    --primary-hover: #218838;
+    --background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); /* Transparansi hitam memudar */
+    --text-color: #ffffff;
+    --light-bg: #f8f9fa;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+}
+
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+.menu-button {
+    position: absolute  ;
+    top: 20px;
+    left: 10px; /* Pindahkan ke kanan atas */
+    z-index: 2000;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparansi hitam lebih gelap */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.menu-button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.menu-slide {
+    position: fixed;
+    top: 0;
+    left: -300px; /* Pastikan ini bernilai negatif sesuai lebar menu */
+    width: 300px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(0, 255, 128), rgb(33, 224, 90));
+    margin: 0; /* Tambahkan ini */
+    padding: 0; /* Tambahkan ini */
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+    overflow: hidden;
+    overflow-y: auto;
+    box-shadow: none;
+    border: none;
+}
+
+.menu-slide:not(.open) {
+    left: -300px; /* Pastikan tetap tersembunyi */
+}
+
+.menu-slide.open {
+    left: 0; /* Menu muncul */
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2000;
+}
+
+.logo img {
+    width: 90px;
+    height: auto;
+}
+
+nav {
+    width: 268px;
+    position: fixed;
+    left: -300px;
+    top: 0;
+    bottom: 0;
+    background: var(--background-gradient);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 1em;
+    overflow-y: auto;
+}
+
+nav a.active {
+    background-color: #16a085;
+  }
+
+nav.open {
+    left: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 1em;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 0.5em;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #16a085;
+}
+
+.map-section {
+    flex: 1;
+    position: relative;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.map-section.menu-open {
+    margin-left: 300px;
+}
+
+.map-container.menu-open {
+    position: fixed;
+}
+
+.map-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+.logo-map-overlay {
+    position: absolute;
+    top: -20px;
+    left: 50px;
+    z-index: 1000;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+.logo-map-overlay img {
+    width: 200px;
+    height: auto;
+}
+
+.table-overlay {
+    position: fixed;
+    bottom: 10px;
+    left: 44%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    max-width: 95%;  /* Perbesar max-width agar tabel lebih panjang */
+    overflow-x: auto;
+    white-space: nowrap; /* Mencegah teks dalam tabel turun ke baris baru */
+}
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto; /* Tambahkan scrollbar horizontal jika tabel terlalu panjang */
+}
+
+#overlayTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px; /* Sedikit perbesar font agar lebih mudah dibaca */
+    table-layout: auto; /* Pastikan kolom menyesuaikan ukuran kontennya */
+}
+
+th, td {
+    padding: 12px 15px; /* Tambah padding agar lebih rapi */
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap; /* Mencegah teks terpotong dan turun ke baris baru */
+}
+
+th {
+    background-color: var(--light-bg);
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    nav {
+        width: 250px;
+    }
+
+    .table-overlay {
+        max-width: 90%;
+    }
+}
+
+/* Kontainer tombol */
+.button-container {
+    position: fixed;
+    bottom: 370px;
+    left: 21px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scaleX(-1);
+}
+
+.button-container button {
+    background-color: #ffffff;
+    border: none;
+    padding: 3px 7px;
+    width: 32px;
+    height: 29px;
+    cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+    color: #333;
+}
+
+.button-container button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.download-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.download-btn {
+    background-color: #4CAF50; /* Warna hijau */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+    background-color: #45a049; /* Warna hijau lebih gelap saat hover */
+}
+
+.download-btn.geojson {
+    background-color: #007BFF; /* Warna biru */
+}
+
+.download-btn.geojson:hover {
+    background-color: #0056b3; /* Warna biru lebih gelap saat hover */
+}
+
+.legend2 {
+    position: fixed;
+    right: 10px;  /* Pindah ke kanan */
+    bottom: 10px; /* Pindah ke bawah */
+    background: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 12px; /* Ukuran font lebih kecil */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 10000;
+    width: 250px; /* Lebar lebih kecil */
+    display: grid;
+    grid-template-columns: auto auto; /* Membuat 2 kolom */
+    gap: 4px; /* Jarak antar elemen */
+}
+
+.legend2 h4 {
+    grid-column: span 2; /* Membuat judul melebar ke dua kolom */
+    margin: 0 0 5px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.legend2 div {
+    display: flex;
+    align-items: center;
+}
+
+.legend2 span {
+    width: 12px;  /* Kotak warna lebih kecil */
+    height: 12px;
+    margin-right: 5px;
+    display: inline-block;
+    border: 1px solid black;
+    flex-shrink: 0; /* Mencegah ukuran kotak berubah */
+}
+
+.mapbox-gl-ctrl-draw {
+    position: absolute !important;
+    z-index: 10000 !important;
+}
+
+.mapbox-gl-draw_ctrl-draw-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 16px !important;
+}

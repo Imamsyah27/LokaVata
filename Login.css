@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+    background: url('Images/Indonesia.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 10px;
+}
+
+.logo img {
+    max-height: 130px;
+    height: auto;
+    padding-left: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+}
+
+nav a:hover,
+nav a.active {
+    background-color: #16a085;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 768px;
+    max-width: 100%;
+    min-height: 480px;
+    z-index: 2;
+}
+
+.container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span {
+    font-size: 12px;
+}
+
+.container a {
+    color: #fff;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container label {
+    color: white; /* Mengubah warna teks label menjadi putih */
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.container input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+    color: white; /* Mengubah teks input menjadi putih */
+}
+
+.container input::placeholder {
+    color: white; /* Mengubah warna placeholder menjadi putih */
+}
+
+.container button {
+    background-color: #16a085;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden {
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    height: 100%;
+}
+
+.container input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.sign-in input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    margin: 8px 0;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.6s ease-in-out;
+}
+
+.sign-in {
+    width: 50%;
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.container.active .sign-in {
+    opacity: 0;
+    pointer-events: none; /* Disable interaction when hidden */
+}
+
+.sign-up {
+    width: 50%;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    opacity: 1;
+    z-index: 5;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.toggle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container {
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle {
+    background-color: #16a085;
+    height: 100%;
+    background: linear-gradient(to right, #195f50, #16a085);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle {
+    transform: translateX(50%);
+}
+
+.toggle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left {
+    transform: translateX(0);
+}
+
+.toggle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right {
+    transform: translateX(200%);
+}
+
+.social-icons {
+    display: flex; /* Pastikan elemen ditampilkan */
+    justify-content: center; /* Atur posisi elemen */
+    margin: 20px 0;
+    opacity: 1; /* Pastikan elemen terlihat */
+    z-index: 10; /* Pastikan elemen berada di atas */
+}
+
+.social-icons a {
+    background-color: rgba(204, 204, 204, 0.5);
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    color: white;
+}
+
+.social-icons a:hover {
+    background-color: #16a085;
+    color: #fff;
+}
+
+
+
+
+
+/* Menyembunyikan form sign up dan sign in secara default */
+.form-container {
+    display: none;
+}
+
+.form-container.sign-in {
+    display: block; /* Form sign-in ditampilkan pertama kali */
+}
+
+/* Ketika kelas 'active' ditambahkan, tampilkan form registrasi */
+#container.active .form-container.sign-up {
+    display: block;
+}
+
+/* Ketika kelas 'active' ditambahkan, sembunyikan form login */
+#container.active .form-container.sign-in {
+    display: none;
+}

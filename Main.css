@@ -1,0 +1,426 @@
+ body {
+      margin: 0;
+      font-family: 'DM Sans', sans-serif;
+      background-color: #d7eacb;
+      color: #384d48;
+    }
+
+header {
+  position: relative; /* <--- penting untuk membuat menu absolute terletak relatif ke header */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  gap: 1.5rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+    .logo1 {
+      width: 150px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      background: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 999px;
+      right: 100px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+      transform: scale(1.05);
+    }
+
+    .auth-icon {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .auth-icon a {
+      text-decoration: none;
+      color: #384d48;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .auth-icon a:hover {
+      color: #007bff;
+    }
+
+    .auth-icon img {
+      height: 44px;
+      transition: transform 0.3s ease;
+    }
+
+    .container {
+      position: relative;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 4rem 4rem 0;
+      flex-wrap: wrap;
+    }
+
+    .text-content {
+      max-width: 550px;
+      z-index: 2;
+    }
+
+    .text-content h1 {
+      font-size: 30pt;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .text-content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-align: justify;
+    }
+
+    .cta-button {
+      background-color: #b85c38;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 999px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #f1a440;
+      transform: scale(1.05);
+    }
+
+    .visitor-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .visitor-info .avatars {
+      display: flex;
+    }
+
+    .visitor-info .avatars img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      object-fit: cover;
+      margin-left: -10px;
+    }
+
+    .visitor-text {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #b85c38;
+    }
+
+    .phone-mockup {
+      position: absolute;
+      top: 20px;
+      left: 650px;
+      width: 500px;
+      height: auto;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: calc(100% * 8);
+    }
+
+    .slides img {
+      width: 500px;
+      height: auto;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      padding: 5px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev { left: 5px; }
+    .next { right: 5px; }
+
+    .dots {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 3px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.active {
+      background-color: #717171;
+    }
+
+    .section-bawah {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 3rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .section-bawah .text-content h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .section-bawah .text-content p {
+      margin-top: 1rem;
+      line-height: 1.6;
+      text-align: justify;
+      margin-right: 120px;
+      font-size: 20px;
+    }
+
+.slider-container {
+    position: relative;
+    width: 300px;   /* ukuran viewport slider */
+    height: 500px;
+    overflow: hidden;
+    border-radius: 40px;
+  }
+  
+  .slides2 {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 900px; /* 3 slides x 300px */
+  }
+  
+  .phone-mockup-bawah {
+    width: 300px;
+    height: 500px;
+    flex-shrink: 0;
+  }
+
+  button.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 10px;
+    z-index: 10;
+  }
+  button.prev {
+    left: 5px;
+  }
+  button.next {
+    right: 5px;
+  }
+
+
+    footer {
+      padding: 2rem 1rem 1rem;
+      background-color: #ffffff;
+      border-radius: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      max-width: 1000px;
+      margin: 4rem auto 2rem;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 2;
+    }
+
+    .footer-left img.logo {
+      height: 80px;
+    }
+
+.footer-logos {
+  display: flex;
+  justify-content: center;   /* Rata tengah secara horizontal */
+  gap: 40px;                 /* Jarak antar item */
+  padding: 20px 0;
+}
+
+.footer-logos > div {
+  display: flex;
+  flex-direction: column;    /* Susun vertikal: logo di atas, teks di bawah */
+  align-items: center;       /* Tengah secara horizontal */
+  text-align: center;        /* Tengah teks */
+}
+
+.footer-logos img {
+  height: 50px;              /* Atur ukuran logo */
+  margin-bottom: 10px;       /* Jarak antara logo dan teks */
+}
+
+.footer-bottom {
+  background-color: #f2f2f2;
+  height: auto;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 20px;
+  margin: auto;
+  padding: 0.5rem 1rem; /* beri sedikit ruang */
+  box-sizing: border-box;
+}
+
+
+.footer-bottom-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-bottom-text {
+  font-size: 10px;
+  color: #333;
+}
+
+.footer-bottom-content img {
+  height: 30px; /* cukup besar, tapi tidak paksa tinggi kontainer */
+  object-fit: contain;
+}
+
+    @media screen and (max-width: 768px) {
+  .phone-mockup {
+    display: none;
+  }
+
+.nav-links {
+    position: absolute;
+    top: 100%; /* tepat di bawah header */
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 9999; /* pastikan berada di atas */
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10000; /* agar klik bisa diproses */
+  }
+
+.footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-left span {
+    max-width: 90%;
+  }
+
+  .footer-logos {
+    gap: 8px;
+  }
+
+    .footer-logos img {
+    height: 40px;
+    margin-bottom: 4px;
+  }
+
+    .footer-logos p {
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.2;
+  }
+  
+  .footer-logos > div {
+    width: 45%;
+    margin-bottom: 8px;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .footer-bottom-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom-content img {
+    height: 24px;
+  }
+}

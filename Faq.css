@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+  
+  /* Header styling */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8); /* Transparansi hitam lebih gelap */
+    color: #fff;
+    height: 80px;
+    position: absolute; /* Overlay di atas background utama */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 10px; /* Menambahkan padding untuk elemen dalam header */
+  }
+
+  header nav a.btnLogout:hover{
+    background-color: red;
+    text-decoration:none;
+}
+ 
+  .logo img {
+    max-height: 130px;
+    height: auto;
+    padding-left: 20px;
+  }
+  
+  nav {
+    display: flex;
+    gap: 15px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+  }
+  
+  nav a:hover,
+  nav a.active {
+    background-color: #16a085;
+  }  
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: url('Images/Mangrove.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+    padding-top: 100px; /* Tambahkan padding agar tidak tertutup header */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    line-height: 1.8;
+}
+
+.question {
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 2px solid white;
+    text-align: left;
+}
+
+.question:hover{
+    color: #6B8E23;
+}
+
+.answer {
+    overflow: hidden;
+    max-height: 0;
+    padding: 0;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: max-height 0.5s ease, padding 0.5s ease;
+}
+
+.answer.open {
+    max-height: 1000px;
+    padding: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.row .text {
+    flex: 1;
+    text-align: justify;
+}
+
+.row img, .row video, .bottom video{
+    width: 200px;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    align-content: center;
+    justify-content: center;
+}
+
+.row video {
+    transform: scaleX(-1);
+}
+
+.bottom {
+    width: 100%;
+}
+
+.bottom .text {
+    text-align: justify;
+    margin-top: 10px;
+}
+
+.answer a {
+    text-decoration: none;
+    color: #00ffcc;
+}
+
+.text a:hover{
+    color: darkgray;
+}
+
+.menu-toggle {
+  display: none; /* agar default-nya sembunyi di desktop */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  padding: 10px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  border-radius: 3px;
+}
+
+/* Style for Pop-Up */
+.popup {
+  display: none;  /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo img {
+    max-height: 60px;
+    padding-left: 10px;
+  }
+
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    z-index: 20;
+  }
+
+  nav a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
+  nav.open {
+    max-height: 300px; /* Cukup besar untuk semua menu */
+    transition: max-height 0.4s ease-in;
+    z-index: 20;
+  }
+  
+    body {
+      padding: 80px 10px 20px 10px;
+      height: auto;
+      overflow-x: hidden;
+    }
+  
+    .container {
+      padding: 20px;
+    }
+  
+    .question {
+      font-size: 18px;
+    }
+  
+    .answer {
+      font-size: 14px;
+    }
+  
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .row img, .row video, .bottom video {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+  
+    .text {
+      text-align: justify;
+    }
+  }
+  
